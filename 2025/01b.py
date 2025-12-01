@@ -37,7 +37,7 @@ for r in lines:
             res += 1 + (val - (100 - pos)) // 100
         pos = (pos + val) % 100
 
-    print('this iter:', res, pos)
+    print('this iter: ', res, pos)
 
 print('---')
 print('finally: ', res, pos)

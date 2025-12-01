@@ -34,7 +34,7 @@ for r in lines:
     if pos == 0:
         res += 1
 
-    print('this iter:', res, pos)
+    print('this iter: ', res, pos)
 
 print('---')
 print('finally: ', res, pos)
