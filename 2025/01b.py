@@ -21,23 +21,24 @@ res = 0
 pos = 50
 
 for r in lines:
-    dir, val = r[:1], r[1:]
+    dir = r[0]
+    val = int(r[1:])
     print('---')
     print(f'pos: {pos}, rot: {r}')
 
     if dir == 'L':
         if pos == 0:
-            res += int(val) // 100
-        elif int(val) >= pos:
-            res += 1 + (int(val) - pos) // 100
-        pos = (pos - int(val)) % 100
+            res += val // 100
+        elif val >= pos:
+            res += 1 + (val - pos) // 100
+        pos = (pos - val) % 100
     else:
-        if int(val) >= 100 - pos:
-            res += 1 + (int(val) - (100 - pos)) // 100
-        pos = (pos + int(val)) % 100
+        if val >= 100 - pos:
+            res += 1 + (val - (100 - pos)) // 100
+        pos = (pos + val) % 100
 
     print('this iter:', res, pos)
 
 print('---')
-print('finally: ', res,pos)
+print('finally: ', res, pos)
 
