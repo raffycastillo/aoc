@@ -3,6 +3,7 @@
 from aocd import get_data
 
 data = get_data(day=1, year=2025)
-input = open('7.in', 'a')
+input = open('1.in', 'a')
 input.write(data)
 input.close()
+
