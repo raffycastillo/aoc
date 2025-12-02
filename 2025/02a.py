@@ -14,31 +14,28 @@ input_file = f'{problem_num}-test.in' if args.test else f'{problem_num}.in'
 input = open(input_file, 'r')
 data = input.read()
 input.close()
-lines = data.strip().split('\n')
+lines = data.strip().split(',')
 # FILE READ setup END
 
 res = 0
-pos = 50
 
 for r in lines:
-    dir = r[0]
-    val = int(r[1:])
+    left, right = map(lambda x: int(x), r.split('-'))
     print('---')
-    print(f'pos: {pos}, rot: {r}')
+    print('processing range: ', left, '-', right)
 
-    if dir == 'L':
-        pos = (pos - val) % 100
-    else:
-        pos = (pos + val) % 100
-    
-    if pos == 0:
-        res += 1
+    i = left
+    while i <= right:
+        strI = str(i)
+        leftS, rightS = strI[:len(strI) // 2], strI[len(strI) // 2:]
 
-    print('this iter: ', res, pos)
+        if (leftS == rightS):
+            res += int(i)
+            print('adding to res: ', int(i))
+
+        i += 1
 
 print('---')
-print('final pos:')
-print(pos)
 print('out:')
 print(res)
 

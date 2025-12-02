@@ -40,5 +40,6 @@ for r in lines:
     print('this iter: ', res, pos)
 
 print('---')
-print('finally: ', res, pos)
+print('out:')
+print(res)
 
