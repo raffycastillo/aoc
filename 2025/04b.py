@@ -14,11 +14,11 @@ input_file = f'{problem_num}-test.in' if args.test else f'{problem_num}.in'
 input = open(input_file, 'r')
 data = input.read()
 input.close()
-lines = data.strip().split('\n')
+lines_raw = data.strip().split('\n')
 # FILE READ setup END
 
 # convert to 2d arr
-lines = [list(line) for line in lines]
+lines = [list(line) for line in lines_raw]
 
 dirs = [
     [-1, -1],
@@ -48,7 +48,7 @@ def check(row: int, col: int, max_row: int, max_col: int, arr: list[list[str]]) 
 res = 0
 while True:
     local_res = res
-    removes = []
+    removes: list[list[int]] = []
 
     for [r, line] in enumerate(lines):
         for [c, char] in enumerate(line):

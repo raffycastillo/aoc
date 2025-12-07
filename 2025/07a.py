@@ -14,7 +14,7 @@ input_file = f'{problem_num}-test.in' if args.test else f'{problem_num}.in'
 input = open(input_file, 'r')
 data = input.read()
 input.close()
-lines = data.strip().split('\n')
+lines_raw: list[str] = data.strip().split('\n')
 # FILE READ setup END
 
 from typing import Optional
@@ -32,9 +32,9 @@ def fall(i: int, j: int, grid: list[list[str]]) -> Optional[list[int]]:
 def list_int_to_str(list: list[int]) -> str:
     return ','.join([str(item) for item in list])
 
-lines = list(map(lambda line: list(line), lines))
-start = next((i for i, x in enumerate(lines[0]) if x == 'S'))
-dq = deque([[0, start]])
+lines: list[list[str]] = list(map(lambda line: list(line), lines_raw))
+start: int = next((i for i, x in enumerate(lines[0]) if x == 'S'))
+dq: deque[list[int]] = deque([[0, start]])
 split_points = set()
 
 

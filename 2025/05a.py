@@ -17,11 +17,11 @@ input.close()
 lines = data.strip()
 # FILE READ setup END
 
-[intervals, ids] = lines.split('\n\n')
-intervals = sorted(list(map(lambda i: list(map(lambda n: int(n),i.split('-'))), intervals.split('\n'))))
-ids = list(map(lambda n: int(n), ids.split('\n')))
+[intervals_raw, ids_raw] = lines.split('\n\n')
+intervals: list[list[int]] = sorted(list(map(lambda i: list(map(lambda n: int(n),i.split('-'))), intervals_raw.split('\n'))))
+ids: list[int] = list(map(lambda n: int(n), ids_raw.split('\n')))
 
-merged_intervals = []
+merged_intervals: list[list[int]] = []
 curr = intervals[0]
 for i in range(1, len(intervals)):
     next = intervals[i]

@@ -14,14 +14,14 @@ input_file = f'{problem_num}-test.in' if args.test else f'{problem_num}.in'
 input = open(input_file, 'r')
 data = input.read()
 input.close()
-lines = data.strip().split('\n')
+lines: list[str] = data.strip().split('\n')
 # FILE READ setup END
 
 from functools import reduce
 
 res = 0
 
-buckets = [[] for _ in lines[0].split()]
+buckets: list[list[int]] = [[] for _ in lines[0].split()]
 
 # buckets, excluding the end
 for line in lines[:-1]:

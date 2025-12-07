@@ -14,7 +14,7 @@ input_file = f'{problem_num}-test.in' if args.test else f'{problem_num}.in'
 input = open(input_file, 'r')
 data = input.read()
 input.close()
-lines = data.strip().split('\n')
+lines: list[str] = data.strip().split('\n')
 # FILE READ setup END
 
 from functools import reduce
@@ -22,7 +22,7 @@ from functools import reduce
 res = 0
 
 # getting length of each column
-op_buckets = []
+op_buckets: list[int] = []
 length = 1
 for [i, op] in enumerate(lines[-1][1:]):
     # print(i, op)
@@ -36,7 +36,7 @@ op_buckets.append(4) # LMAOOO hardcode 3 for test input 4 for actual
 print(f'len of all lines besides last: {len(list(lines[0].split()))}')
 print(f'len of last line: {len(list(lines[-1].split()))}')
 
-buckets = [['' for _ in range(op_buckets[i])] for [i, _] in enumerate(lines[0].split())]
+buckets: list[list[str]] = [['' for _ in range(op_buckets[i])] for [i, _] in enumerate(lines[0].split())]
 # buckets, excluding the end
 for line in lines[:-1]:
     line_ptr = 0

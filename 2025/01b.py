@@ -14,7 +14,7 @@ input_file = f'{problem_num}-test.in' if args.test else f'{problem_num}.in'
 input = open(input_file, 'r')
 data = input.read()
 input.close()
-lines = data.strip().split('\n')
+lines: list[str] = data.strip().split('\n')
 # FILE READ setup END
 
 res = 0
