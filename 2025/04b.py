@@ -31,16 +31,16 @@ dirs = [
     [1, 1]
 ]
 
-def check(row: int, col: int, maxRow: int, maxCol: int, arr: list[list[str]]) -> bool:
+def check(row: int, col: int, max_row: int, max_col: int, arr: list[list[str]]) -> bool:
     count = 0
     for [dr, dc] in dirs:
-        newRow = row+dr
-        newCol = col+dc
+        new_row = row+dr
+        new_col = col+dc
 
-        valid_row = True if newRow >= 0 and newRow <= maxRow else False
-        valid_col = True if newCol >= 0 and newCol <= maxCol else False
+        valid_row = True if new_row >= 0 and new_row <= max_row else False
+        valid_col = True if new_col >= 0 and new_col <= max_col else False
 
-        if valid_row and valid_col and arr[newRow][newCol] == '@':
+        if valid_row and valid_col and arr[new_row][new_col] == '@':
             count += 1
     
     return count < 4

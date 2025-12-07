@@ -26,11 +26,11 @@ for r in lines:
 
     curr = left
     while curr <= right:
-        currStr = str(curr)
-        halfLen = (len(currStr) // 2) + 1
+        curr_str = str(curr)
+        half_len = (len(curr_str) // 2) + 1
 
-        for i in range(1, halfLen):
-            base, remaining = currStr[:i], currStr[i:]
+        for i in range(1, half_len):
+            base, remaining = curr_str[:i], curr_str[i:]
 
             if len(remaining) % i != 0:
                 continue

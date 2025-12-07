@@ -26,10 +26,10 @@ for r in lines:
 
     i = left
     while i <= right:
-        strI = str(i)
-        leftS, rightS = strI[:len(strI) // 2], strI[len(strI) // 2:]
+        str_i = str(i)
+        left_s, right_s = str_i[:len(str_i) // 2], str_i[len(str_i) // 2:]
 
-        if (leftS == rightS):
+        if (left_s == right_s):
             res += int(i)
             print('adding to res: ', int(i))
 

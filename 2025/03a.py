@@ -27,7 +27,7 @@ for line in lines:
     left, right = 0, 1
     line = [int(char) for char in line]
     
-    maxJolt = line[left]*10 + line[right]
+    max_jolt = line[left]*10 + line[right]
     while right < len(line)-1:
         if line[left] < line[right]:
             left = right
@@ -36,10 +36,10 @@ for line in lines:
             right = right+1
         
         curr = line[left]*10 + line[right]
-        maxJolt = max(maxJolt, curr)
+        max_jolt = max(max_jolt, curr)
     
-    res += maxJolt
-    print('added: ', maxJolt)
+    res += max_jolt
+    print('added: ', max_jolt)
 
 print('---')
 print('out:')
