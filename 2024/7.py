@@ -98,7 +98,7 @@ def rec(operations, values, target):
         final1 = rec(operations[1:], values[1:], target-int(values[0]))
     if res2[0] == 1:
         # print(f'* recursion: {target/int(values[0])}')
-        # bruh so sometimes you want to process two at a time for mult but then how do you retain the previous value for the next recursive step? holy fuck this is so fucking annoying lmfao
+        # so sometimes you want to process two at a time for mult but then how do you retain the previous value for the next recursive step?
         values[1] = values[0] * values[1]
         final2 = rec(operations[1:], values[1:], target-int(values[0]))
     return min(abs(final1), abs(final2))

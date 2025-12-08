@@ -62,7 +62,7 @@ while next != (-1,-1):
 p1 = len(visited)
 print(p1)
 
-# how the fuck do i do p2 mann
+# how the do i do p2...
 p2 = 0
 # print(visited)
 # for point in visited:
